@@ -1,5 +1,9 @@
 pipeline{
-
+    environment{
+        registry = "ehrazhasan/scientificalculator"
+        registryCredential = "docker-cred"
+        dockerImage = ''
+    }
     agent any
     stages{
 
@@ -28,6 +32,28 @@ pipeline{
                     sh "mvn test"
                 }
          }
+
+         stage("step-4 Building the docker image"){
+
+             steps{
+
+                 script{
+                    dockerImage = docker.build registry + ":latest"
+                 }
+             }
+        }
+
+        stage("step-5 Push dockerImage to docker hub"){
+
+             steps{
+
+                 script{
+                    docker.withRegistry( '', registryCredential){
+                        dockerImage.push()
+                    }
+                 }
+             }
+        }
 
     }
 }
