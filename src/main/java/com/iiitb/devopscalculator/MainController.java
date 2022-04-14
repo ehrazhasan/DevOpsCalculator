@@ -19,7 +19,9 @@ public class MainController {
         double val1 = Double.parseDouble(op1);
         double val2 = Double.parseDouble(op2);
         logger.info("[NATURAL LOG] - " + val1);
-        model.addAttribute("something", "The answer is : " + Math.log(val1));
+        double ans = Math.log(val1);
+        model.addAttribute("something", "The answer is : " + ans);
+        logger.info("The Natural log of " + val1 + " is " + ans);
         return "answer";
     }
 
@@ -28,7 +30,10 @@ public class MainController {
 
         double val1 = Double.parseDouble(op1);
         double val2 = Double.parseDouble(op2);
-        model.addAttribute("something", "The answer is : " + Math.sqrt(val1));
+        logger.info("[SQUARE ROOT] - " + val1);
+        double ans = Math.sqrt(val1);
+        model.addAttribute("something", "The answer is : " + ans);
+        logger.info("The Square Root of " + val1 + " is " + ans);
         return "answer";
     }
 
@@ -38,6 +43,7 @@ public class MainController {
 
         double val1 = Double.parseDouble(op1);
         double val2 = Double.parseDouble(op2);
+        logger.info("[FACTORIAL] - " + val1);
         BigInteger factorial = BigInteger.ONE;
         for(long i = 1; i <= val1; ++i){
 
@@ -45,6 +51,7 @@ public class MainController {
         }
 
         model.addAttribute("something", "The answer is : " + factorial);
+        logger.info("The Factorial of " + val1 + " is " + factorial);
         return "answer";
     }
 
@@ -53,7 +60,11 @@ public class MainController {
 
         double val1 = Double.parseDouble(op1);
         double val2 = Double.parseDouble(op2);
-        model.addAttribute("something", "The answer is : " + Math.pow(val1,val2));
+        logger.info("[Power Operand 1] - " + val1);
+        logger.info("[Power Operand 2] - " + val2);
+        double ans = Math.pow(val1, val2);
+        model.addAttribute("something", "The answer is : " + ans);
+        logger.info("The Power of " + val1 + " raise to the power of " + val2 + " is " + ans);
         return "answer";
     }
 }
