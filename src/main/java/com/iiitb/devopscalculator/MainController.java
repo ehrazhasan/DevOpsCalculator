@@ -73,4 +73,28 @@ public class MainController {
         double val = Double.parseDouble(a);
         return Math.log(val);
     }
+
+    public double getFact(String val1) {
+
+        long val = Long.parseLong(val1);
+        long factorial = 1;
+        for(long i = 1; i <= val; ++i){
+
+            factorial = factorial * i;
+        }
+
+        return factorial;
+    }
+
+    public double getPower(String op1, String op2) {
+        double val1 = Double.parseDouble(op1);
+        double val2 = Double.parseDouble(op2);
+        return Math.pow(val1, val2);
+    }
+
+    public double getSquareRoot(String i) {
+
+        double val = Double.parseDouble(i);
+        return Math.sqrt(val);
+    }
 }
