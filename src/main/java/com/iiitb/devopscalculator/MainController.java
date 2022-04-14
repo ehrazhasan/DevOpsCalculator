@@ -67,4 +67,10 @@ public class MainController {
         logger.info("The Power of " + val1 + " raise to the power of " + val2 + " is " + ans);
         return "answer";
     }
+
+    public double getLog(String a) {
+
+        double val = Double.parseDouble(a);
+        return Math.log(val);
+    }
 }
