@@ -18,8 +18,8 @@ class DevOpsCalculatorApplicationTests {
     @Test
     public void logFalsePositive(){
         System.out.println("Finding natural log for False Positive");
-        assertEquals(0, calculator.getLog(String.valueOf(1)), DELTA);
-        assertEquals(0, calculator.getLog(String.valueOf(1)), DELTA);
+        assertEquals(6, calculator.getLog(String.valueOf(2.4)), DELTA);
+        assertEquals(7.3, calculator.getLog(String.valueOf(2.1)), DELTA);
     }
 
 
