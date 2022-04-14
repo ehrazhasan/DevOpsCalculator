@@ -5,18 +5,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.ui.Model;
-
-import javax.servlet.http.HttpServletRequest;
 import java.math.BigInteger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 
 
 @Controller
 public class MainController {
-
+    private static final Logger logger = LogManager.getLogger(MainController.class);
     @RequestMapping(value="/calculator", method=RequestMethod.POST, params="action=logarithm")
     public String logarithm(@RequestParam("operation1") String op1, @RequestParam("operation2") String op2, Model model) {
         double val1 = Double.parseDouble(op1);
         double val2 = Double.parseDouble(op2);
+        logger.info("[NATURAL LOG] - " + val1);
         model.addAttribute("something", "The answer is : " + Math.log(val1));
         return "answer";
     }
