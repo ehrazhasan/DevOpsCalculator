@@ -70,6 +70,8 @@ public class MainController {
     public double getLog(String a) {
 
         double val = Double.parseDouble(a);
+        logger.info("[NATURAL LOG] - " + val);
+        logger.info("The Natural log of " + val + " is " + Math.log(val));
         return Math.log(val);
     }
 
@@ -77,23 +79,32 @@ public class MainController {
 
         long val = Long.parseLong(val1);
         long factorial = 1;
+        logger.info("[FACTORIAL] - " + val);
         for(long i = 1; i <= val; ++i){
 
             factorial = factorial * i;
         }
-
+        logger.info("The Factorial of " + val + " is " + factorial);
         return factorial;
     }
 
     public double getPower(String op1, String op2) {
         double val1 = Double.parseDouble(op1);
         double val2 = Double.parseDouble(op2);
+
+        logger.info("[Power Operand 1] - " + val1);
+        logger.info("[Power Operand 2] - " + val2);
+
+        logger.info("The Power of " + val1 + " raise to the power of " + val2 + " is " + Math.pow(val1, val2));
         return Math.pow(val1, val2);
     }
 
     public double getSquareRoot(String i) {
 
         double val = Double.parseDouble(i);
+        logger.info("[SQUARE ROOT] - " + val);
+
+        logger.info("The Square Root of " + val + " is " + Math.sqrt(val));
         return Math.sqrt(val);
     }
 }
