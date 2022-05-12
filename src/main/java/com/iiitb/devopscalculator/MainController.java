@@ -71,7 +71,7 @@ public class MainController {
 
         double val = Double.parseDouble(a);
         logger.info("[NATURAL LOG] - " + val);
-        logger.info("The Natural log of " + val + " is " + Math.log(val));
+        logger.info("The Natural LOG of " + val + " is " + Math.log(val));
         return Math.log(val);
     }
 
